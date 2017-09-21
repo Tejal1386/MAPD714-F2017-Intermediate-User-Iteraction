@@ -37,7 +37,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="8xS-ya-SzV"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW4-jt-7zG">
                                 <rect key="frame" x="7" y="239" width="86" height="25"/>
@@ -51,7 +54,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="RZu-o5-IsJ"/>
+                                </connections>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="BQX-uE-sUQ">
                                 <rect key="frame" x="64" y="341" width="289" height="31"/>
@@ -106,14 +112,26 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96693134307861328" green="0.8062402606010437" blue="0.27440759539604187" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="R0x-Sd-GvG" appends="YES" id="hLv-BT-Q77"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="doSomethingButton" destination="c0P-mB-fd8" id="HjI-ag-GiX"/>
+                        <outlet property="leftSwitch" destination="yOJ-qy-ME1" id="6WG-Za-4PN"/>
                         <outlet property="nameTextField" destination="7HT-xf-v5l" id="Rtw-fq-in5"/>
                         <outlet property="numberTextField" destination="gPA-Jy-Qtr" id="Cpi-ST-90t"/>
+                        <outlet property="rightSwitch" destination="O4j-uo-ndj" id="WTV-ih-ee0"/>
                         <outlet property="sliderLabel" destination="vEM-Rh-xgU" id="c4u-LM-qDR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="R0x-Sd-GvG">
+                    <connections>
+                        <action selector="onTapGestureRecogniser:" destination="BYZ-38-t0r" id="fqv-D5-vlP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
